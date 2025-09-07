@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { BookOpen, Star, Users, Sparkles, ArrowRight } from 'lucide-react';
 import { FloatingBooks } from '../components/FloatingBooks';
@@ -20,100 +19,64 @@ export const LandingPage: React.FC = () => {
       {/* Navigation */}
       <nav className="absolute top-0 left-0 right-0 z-20 p-6">
         <div className="flex justify-between items-center max-w-7xl mx-auto">
-          <motion.div 
-            className="flex items-center space-x-2"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="flex items-center space-x-2">
             <BookOpen className="w-8 h-8 text-white" />
             <span className="text-2xl font-bold text-white">Magic Books</span>
-          </motion.div>
+          </div>
           
-          <motion.div 
-            className="hidden md:flex space-x-8 text-white"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div className="hidden md:flex space-x-8 text-white">
+            <Link to="/library" className="hover:text-purple-300 transition-colors">Browse Books</Link>
+            <Link to="/search" className="hover:text-purple-300 transition-colors">Search</Link>
             <a href="#features" className="hover:text-purple-300 transition-colors">Features</a>
             <Link to="/about" className="hover:text-purple-300 transition-colors">About</Link>
             <Link to="/contact" className="hover:text-purple-300 transition-colors">Contact</Link>
             <Link to="/auth" className="hover:text-purple-300 transition-colors">Sign In</Link>
-          </motion.div>
+          </div>
         </div>
       </nav>
 
       {/* Main Content */}
       <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
+        <header className="sr-only">
+          <h1>Magic Books - Your Ultimate Book Discovery Platform</h1>
+        </header>
+        
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           
           {/* Left Content */}
-          <motion.div
-            className="text-white space-y-8"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
+          <div className="text-white space-y-8">
             <div className="space-y-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+              <div>
+                <h1 className="text-5xl md:text-7xl font-bold leading-tight" role="banner">
                   Magic 
                   <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                     Books
                   </span>
                 </h1>
-              </motion.div>
+              </div>
               
-              <motion.p 
-                className="text-xl text-purple-200 leading-relaxed max-w-lg"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-              >
+              <p className="text-xl text-purple-200 leading-relaxed max-w-lg">
                 Discover enchanting stories, explore magical worlds, and embark on extraordinary adventures through our curated collection of books.
-              </motion.p>
+              </p>
             </div>
 
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-            >
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/library">
-                <motion.button
-                  className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                <button className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold text-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 hover:scale-105 hover:-translate-y-0.5">
                   <span>Start Reading</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
+                </button>
               </Link>
               
               <Link to="/auth">
-                <motion.button
-                  className="px-8 py-4 border-2 border-white/30 rounded-full text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                <button className="px-8 py-4 border-2 border-white/30 rounded-full text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5">
                   Join Community
-                </motion.button>
+                </button>
               </Link>
-            </motion.div>
+            </div>
 
             {/* Stats */}
-            <motion.div 
-              className="flex gap-8 pt-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.1 }}
-            >
+            <div className="flex gap-8 pt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white">10K+</div>
                 <div className="text-purple-300">Books</div>
@@ -126,7 +89,7 @@ export const LandingPage: React.FC = () => {
                 <div className="text-3xl font-bold text-white">25K+</div>
                 <div className="text-purple-300">Readers</div>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* Right Content - Magical Girl */}
@@ -137,104 +100,85 @@ export const LandingPage: React.FC = () => {
       </div>
 
       {/* Features Section */}
-      <motion.div 
+      <section 
         id="features"
         className="relative z-10 py-20 px-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.3 }}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            className="text-4xl font-bold text-white text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.5 }}
-          >
+          <h2 className="text-4xl font-bold text-white text-center mb-16">
             Why Choose Magic Books?
-          </motion.h2>
+          </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <motion.div 
-              className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-purple-500/20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.7 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
+            <div className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-purple-500/20 hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
               <BookOpen className="w-16 h-16 text-purple-400 mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold text-white mb-4">Curated Collection</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4">
+                <Link to="/library" className="hover:text-purple-300 transition-colors">
+                  Curated Collection
+                </Link>
+              </h3>
               <p className="text-purple-200 leading-relaxed">Handpicked books across all genres, from fantasy to mystery, romance to sci-fi. Every book is carefully selected for quality.</p>
-            </motion.div>
+            </div>
             
-            <motion.div 
-              className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-purple-500/20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.9 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
+            <div className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-purple-500/20 hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
               <Sparkles className="w-16 h-16 text-purple-400 mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold text-white mb-4">Smart Recommendations</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4">
+                <Link to="/dashboard" className="hover:text-purple-300 transition-colors">
+                  Smart Recommendations
+                </Link>
+              </h3>
               <p className="text-purple-200 leading-relaxed">Get personalized book suggestions based on your reading history, preferences, and community ratings.</p>
-            </motion.div>
+            </div>
             
-            <motion.div 
-              className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-purple-500/20"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 2.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
+            <div className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-purple-500/20 hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
               <Users className="w-16 h-16 text-purple-400 mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold text-white mb-4">Reader Community</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4">
+                <Link to="/profile" className="hover:text-purple-300 transition-colors">
+                  Reader Community
+                </Link>
+              </h3>
               <p className="text-purple-200 leading-relaxed">Connect with fellow book lovers, share reviews, join discussions, and discover new favorites together.</p>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </motion.div>
+      </section>
 
       {/* CTA Section */}
-      <motion.div 
-        className="relative z-10 py-20 px-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 2.3 }}
-      >
+      <section className="relative z-10 py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 
-            className="text-4xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.5 }}
-          >
+          <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Begin Your Journey?
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-purple-200 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.7 }}
-          >
+          </h2>
+          <p className="text-xl text-purple-200 mb-8">
             Join thousands of readers who have already discovered their next favorite book
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.9 }}
-          >
+          </p>
+          <div>
             <Link to="/auth">
-              <motion.button
-                className="px-12 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-bold text-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-2xl"
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <button className="px-12 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-bold text-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 shadow-2xl hover:scale-105 hover:-translate-y-1">
                 Get Started Free
-              </motion.button>
+              </button>
             </Link>
-          </motion.div>
+          </div>
+          
+          {/* Additional Navigation Links */}
+          <nav className="mt-12" aria-label="Quick navigation">
+            <div className="flex flex-wrap justify-center gap-6 text-purple-300">
+              <Link to="/library" className="hover:text-white transition-colors underline">
+                Browse Our Library
+              </Link>
+              <Link to="/search" className="hover:text-white transition-colors underline">
+                Search Books
+              </Link>
+              <Link to="/favorites" className="hover:text-white transition-colors underline">
+                Create Your TBR List
+              </Link>
+              <Link to="/dashboard" className="hover:text-white transition-colors underline">
+                Track Your Reading
+              </Link>
+            </div>
+          </nav>
         </div>
-      </motion.div>
+      </section>
     </div>
   );
 };

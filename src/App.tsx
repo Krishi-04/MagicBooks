@@ -28,73 +28,73 @@ function App() {
           <Route 
             path="/read/:id" 
             element={
-              <>
+              <main>
                 <Navigation />
                 <ReadingPage />
-              </>
+              </main>
             } 
           />
           <Route 
             path="/library" 
             element={
-              <>
+              <main>
                 <Navigation />
                 <LibraryPage />
-              </>
+              </main>
             } 
           />
           <Route 
             path="/book/:id" 
             element={
-              <>
+              <main>
                 <Navigation />
                 <BookDetailPage />
-              </>
+              </main>
             } 
           />
           <Route 
             path="/dashboard" 
             element={
-              <>
+              <main>
                 <Navigation />
                 <DashboardPage />
-              </>
+              </main>
             } 
           />
           <Route 
             path="/search" 
             element={
-              <>
+              <main>
                 <Navigation />
                 <SearchPage />
-              </>
+              </main>
             } 
           />
           <Route 
             path="/favorites" 
             element={
-              <>
+              <main>
                 <Navigation />
                 <FavoritesPage />
-              </>
+              </main>
             } 
           />
           <Route 
             path="/profile" 
             element={
-              <>
+              <main>
                 <Navigation />
                 <ProfilePage />
-              </>
+              </main>
             } 
           />
           <Route 
             path="/settings" 
             element={
-              <>
+              <main>
                 <Navigation />
                 <SettingsPage />
-              </>
+              </main>
             } 
           />
           <Route path="/x9z8y7w6v5u4t3s2r1q0p" element={<AdminPage />} />
