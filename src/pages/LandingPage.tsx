@@ -90,7 +90,6 @@ export const LandingPage: React.FC = () => {
                 <div className="text-purple-300">Readers</div>
               </div>
             </div>
-          </motion.div>
 
           {/* Right Content - Magical Girl */}
           <div className="relative h-[600px] flex items-center justify-center">
